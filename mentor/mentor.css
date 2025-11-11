@@ -641,7 +641,7 @@ section.revealed {
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   text-align: center;
   text-shadow: 0 0 30px var(--glow-color);
 }

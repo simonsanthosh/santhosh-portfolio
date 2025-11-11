@@ -516,12 +516,15 @@ function handleOptionClick(option) {
   switch (option) {
     case "hire":
       break;
+    case "freelance":
+      setTimeout(() => {
+        window.location.href = "freelance/freelance.html";
+      }, 300);
+      break;
     case "mentorship":
       setTimeout(() => {
         window.location.href = "mentor/mentor.html";
       }, 300);
-      break;
-    case "freelance":
       break;
     case "about":
       // Mark that we're navigating internally
