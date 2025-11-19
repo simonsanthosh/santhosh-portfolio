@@ -300,9 +300,10 @@ body {
 }
 
 .intro-title {
-  font-size: clamp(2rem, 5vw, 3.5rem); /* Reduced from 4.5rem */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 2rem;
   line-height: 1.2;
+  text-align: center;
 }
 
 .line1 {
@@ -310,7 +311,6 @@ body {
   opacity: 0;
   text-shadow: 0 0 20px var(--glow-color);
   transform: translateY(60px) scale(0.8);
-  white-space: nowrap; /* ADD THIS - prevents line break */
 }
 
 .line2 {
@@ -325,7 +325,7 @@ body {
 .intro-description {
   font-size: 1.05rem; /* Slightly smaller for two lines */
   line-height: 1.8;
-  color: var(--primary-dark);
+  color: #a0a0a0;
   margin-bottom: 3rem;
   opacity: 0;
   transform: translateY(50px);
@@ -468,12 +468,13 @@ section.revealed {
 
 .section-title {
   text-align: center;
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.05em;
-  margin-bottom: 4rem;
-  text-shadow: 0 0 50px var(--glow-color);
+  margin-bottom: 5rem;
+  text-shadow: 0 0 40px var(--glow-color);
+  text-transform: uppercase;
 }
 
 /* ========================================
@@ -2022,7 +2023,7 @@ section.revealed {
   }
 
   .section-title {
-    font-size: clamp(2rem, 9vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
     margin-bottom: 3rem;
   }
 
@@ -2064,7 +2065,7 @@ section.revealed {
   }
 
   .intro-title {
-    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    font-size: clamp(2.3rem, 7vw, 3.6rem);
     margin-bottom: 1.5rem;
   }
 
@@ -2663,7 +2664,7 @@ section.revealed {
 @media (max-width: 480px) {
   /* Intro */
   .intro-title {
-    font-size: clamp(1.6rem, 7vw, 2.4rem);
+    font-size: clamp(2.1rem, 7vw, 3.1rem);
   }
 
   .intro-description {

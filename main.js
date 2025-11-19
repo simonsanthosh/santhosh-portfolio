@@ -515,6 +515,9 @@ function handleOptionClick(option) {
   // Handle navigation
   switch (option) {
     case "hire":
+      setTimeout(() => {
+        window.location.href = "hire/hire.html";
+      }, 300);
       break;
     case "freelance":
       setTimeout(() => {

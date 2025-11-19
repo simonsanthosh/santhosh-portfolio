@@ -5,18 +5,9 @@
   box-sizing: border-box;
 }
 
-/* Theme Variables */
-:root {
-  --primary-color: #0cc060;
-  --primary-dark: #0c984e;
-  --accent-color: #39ff14;
-  --bg-gradient: #06c974;
-  --border-color: rgba(12, 152, 78, 0.3);
-  --bg-overlay: rgba(12, 152, 78, 0.1);
-  --glow-color: rgba(12, 152, 78, 0.3);
-}
+/* Note: Common theme variables moved to shared.css */
 
-/* Monochrome Pixel Theme */
+/* Monochrome Pixel Theme - Index Page Specific */
 body.theme-mono {
   --primary-color: #ffffff;
   --primary-dark: #cccccc;
@@ -974,58 +965,9 @@ body.theme-mono .ai-chat-toggle-wrapper {
   box-shadow: 0 5px 15px var(--glow-color);
 }
 
-/* Background Effects - Optimized for performance */
-.animated-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -10;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse at center,
-    var(--bg-gradient) 0%,
-    #000 70%
-  );
-  /* Use only opacity animation - GPU accelerated, no repaints */
-  animation: fadeGlow 12s ease-in-out infinite;
-  opacity: 0.15;
-  filter: blur(40px);
-  /* Hint browser for GPU optimization */
-  will-change: opacity;
-}
+/* Note: .animated-bg, .grid-overlay, fadeGlow moved to shared.css */
 
-@keyframes fadeGlow {
-  0%, 100% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.25;
-  }
-}
-
-/* 🟢 Grid Overlay */
-.grid-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background-image: linear-gradient(
-      to right,
-      rgba(173, 216, 230, 0.2) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(173, 216, 230, 0.2) 1px, transparent 1px);
-  background-size: 5px 5px;
-  mask-image: linear-gradient(
-    to top,
-    transparent 30%,
-    rgba(255, 255, 255, 0.423) 50%,
-    transparent 70%
-  );
-  mask-size: 100% 300%;
-  mask-position: 0 100%;
-  animation: gradientReveal 12s ease-in-out infinite;
-}
-
+/* Page-specific grid animation */
 @keyframes gradientReveal {
   0% {
     mask-position: 0 100%;
@@ -2046,16 +1988,7 @@ body.theme-mono #console-tab {
   animation: slideUp 0.5s ease-out;
 }
 
-@keyframes slideUp {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+/* Note: slideUp animation moved to shared.css */
 
 .console-send-btn {
   background: transparent;

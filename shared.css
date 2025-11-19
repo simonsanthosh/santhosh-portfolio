@@ -1,0 +1,333 @@
+/* ============================================
+   SHARED STYLES - Portfolio Website
+   Used across all pages to prevent duplication
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES - Theme System
+   ============================================ */
+:root {
+  /* Primary Colors */
+  --primary-color: #0cc060;
+  --primary-dark: #0a9d4d;
+  --accent-color: #00d9ff;
+
+  /* Background & Overlays */
+  --bg-gradient: radial-gradient(circle at 50% 50%, rgba(12, 192, 96, 0.03) 0%, transparent 50%);
+  --border-color: rgba(12, 192, 96, 0.2);
+  --bg-overlay: rgba(15, 15, 15, 0.85);
+  --glow-color: rgba(12, 192, 96, 0.5);
+
+  /* Typography */
+  --font-mono: "Cascadia Code", "JetBrains Mono", monospace;
+}
+
+/* Theme Variations */
+body.theme-blue {
+  --primary-color: #00d9ff;
+  --primary-dark: #00a8cc;
+  --accent-color: #0cc060;
+  --bg-gradient: radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.03) 0%, transparent 50%);
+  --border-color: rgba(0, 217, 255, 0.2);
+  --glow-color: rgba(0, 217, 255, 0.5);
+}
+
+body.theme-purple {
+  --primary-color: #a855f7;
+  --primary-dark: #7c3aed;
+  --accent-color: #ec4899;
+  --bg-gradient: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.03) 0%, transparent 50%);
+  --border-color: rgba(168, 85, 247, 0.2);
+  --glow-color: rgba(168, 85, 247, 0.5);
+}
+
+body.theme-amber {
+  --primary-color: #f59e0b;
+  --primary-dark: #d97706;
+  --accent-color: #ef4444;
+  --bg-gradient: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+  --border-color: rgba(245, 158, 11, 0.2);
+  --glow-color: rgba(245, 158, 11, 0.5);
+}
+
+body.theme-pink {
+  --primary-color: #ec4899;
+  --primary-dark: #db2777;
+  --accent-color: #f472b6;
+  --bg-gradient: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+  --border-color: rgba(236, 72, 153, 0.2);
+  --glow-color: rgba(236, 72, 153, 0.5);
+}
+
+/* Monochrome Theme */
+body.theme-mono {
+  --primary-color: #ffffff;
+  --primary-dark: #e5e5e5;
+  --accent-color: #cccccc;
+  --bg-gradient: none;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glow-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   SHARED KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Fade and Glow */
+@keyframes fadeGlow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Dots */
+@keyframes dots {
+  0%, 20% {
+    content: '';
+  }
+  40% {
+    content: '.';
+  }
+  60% {
+    content: '..';
+  }
+  80%, 100% {
+    content: '...';
+  }
+}
+
+/* Marquee Scroll */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mouse Float */
+@keyframes mouseFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Mouse Scroll */
+@keyframes mouseScroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--glow-color);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--glow-color);
+    transform: scale(1.02);
+  }
+}
+
+/* Rotate */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   SHARED BACKGROUND ELEMENTS
+   ============================================ */
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-gradient);
+  pointer-events: none;
+  z-index: -2;
+  animation: fadeGlow 12s ease-in-out infinite;
+}
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* ============================================
+   TERMINAL LOADER (All Pages)
+   ============================================ */
+
+.terminal-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.terminal-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.terminal-text {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  letter-spacing: 0.1em;
+}
+
+.terminal-text .dots::after {
+  content: '';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+/* ============================================
+   DOCK BLUR OVERLAY (All Sub-pages)
+   ============================================ */
+
+.dock-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  z-index: 98;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+
+.dock-blur-overlay.active {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   SCROLL INDICATOR (All Pages)
+   ============================================ */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mouse-icon {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  position: relative;
+  animation: mouseFloat 2s ease-in-out infinite;
+}
+
+.mouse-wheel {
+  width: 3px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: mouseScroll 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.fade-in {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px var(--glow-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 40px var(--glow-color);
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .grid-overlay {
+    background-size: 30px 30px;
+  }
+
+  .terminal-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-overlay {
+    background-size: 20px 20px;
+    opacity: 0.2;
+  }
+}

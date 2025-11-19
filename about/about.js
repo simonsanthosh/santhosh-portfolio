@@ -1363,7 +1363,7 @@ document.querySelectorAll(".social-btn").forEach((btn) => {
         window.location.href = "mailto:[email protected]";
         break;
       case "whatsapp":
-        window.open("https://wa.me/9941292729", "_blank");
+        window.open("https://wa.me/919941292729", "_blank");
         break;
     }
   });
@@ -1587,14 +1587,14 @@ function attachDockListeners(sectionName) {
 function handleDockAction(action) {
   switch(action) {
     case 'hire':
-      alert("Opening hire form...");
+      window.location.href = '../hire/hire.html';
       break;
     case 'mentorship':
       // Navigate to mentor page
       window.location.href = '../mentor/mentor.html';
       break;
     case 'freelance':
-      alert("Freelancing inquiry...");
+      window.location.href = '../freelance/freelance.html';
       break;
     case 'backtotop':
       const dock = document.getElementById('dockMenu');

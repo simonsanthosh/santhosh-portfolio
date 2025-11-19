@@ -3,11 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Freelancing - Santhosh Portfolio</title>
+    <title>Freelance UX/UI Design Services | The Pixel Society - Santhosh</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional UX/UI design services for web and mobile applications. Offering user research, competitive analysis, user flows, prototyping, and pixel-perfect designs. Starting from ₹900." />
+    <meta name="keywords" content="UX design, UI design, freelance designer, user research, prototyping, mobile app design, web design, design systems" />
+    <meta name="author" content="Santhosh - The Pixel Society" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Freelance UX/UI Design Services | The Pixel Society" />
+    <meta property="og:description" content="Transforming ideas into intuitive, impactful digital experiences. Professional UX/UI design services for web and mobile." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../assets/TPS.png" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Freelance UX/UI Design Services | The Pixel Society" />
+    <meta name="twitter:description" content="Professional UX/UI design services for web and mobile applications." />
+    <meta name="twitter:image" content="../assets/TPS.png" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/S_Logo_Thick.svg" />
     <link rel="icon" type="image/png" href="../assets/S_Logo.png" />
     <link rel="apple-touch-icon" href="../assets/S_Logo.png" />
+    <link rel="stylesheet" href="../shared.css" />
     <link rel="stylesheet" href="freelance.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Cascadia+Code&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
@@ -37,14 +56,15 @@
     <!-- Main Wrapper -->
     <div class="freelance-wrapper" id="freelanceWrapper">
       <!-- Navigation -->
-      <nav class="freelance-nav" id="freelanceNav">
+      <nav class="freelance-nav" id="freelanceNav" role="navigation" aria-label="Main navigation">
         <div class="nav-left">
-          <button class="home-btn" id="homeBtn">
+          <button class="home-btn" id="homeBtn" aria-label="Go to home page">
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              aria-hidden="true"
             >
               <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
@@ -52,45 +72,25 @@
           </button>
         </div>
         <div class="nav-right">
-          <button class="social-btn linkedin" data-link="linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          <button class="social-btn linkedin" data-link="linkedin" aria-label="Connect on LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
           </button>
-          <button class="social-btn gmail" data-link="gmail">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <button class="social-btn gmail" data-link="gmail" aria-label="Send email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
           </button>
-          <button class="social-btn whatsapp" data-link="whatsapp">
+          <button class="social-btn whatsapp" data-link="whatsapp" aria-label="Contact on WhatsApp">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 fill="currentColor"
                 d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"
               />
             </svg>
-          </button>
-          <button class="resume-btn" id="resumeBtn">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <polyline
-                points="14 2 14 8 20 8"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-            <span class="text">Resume</span>
           </button>
         </div>
       </nav>
@@ -100,45 +100,275 @@
         <div class="intro-content">
           <div class="logo-badge">
             <img src="../assets/TPS.png" alt="The Pixel Society" class="badge-logo" />
+            <span class="badge-text">The Pixel Society</span>
           </div>
           <h1 class="intro-title">
             <span class="line1">Pixel-Perfect Design</span>
             <span class="line2">Human-Centered Impact</span>
           </h1>
           <p class="intro-description">
-            From concept to delivery, I transform your ideas into intuitive digital experiences.<br>
-            Specialized in UX/UI design, user research, and design systems — with proven results across web and mobile platforms.<br>
-            Whether you're a startup building your MVP or an enterprise scaling your product, I bring clarity, creativity, and execution.
+            Transforming ideas into intuitive, impactful digital experiences that connect users and products.<br>
+            Focused on UX/UI design, user research, and scalable design systems for web and mobile.
           </p>
-          <p class="intro-goal">
-            Open for freelance projects and design collaborations. Let's build something exceptional together — reach out via LinkedIn, Email, or WhatsApp to discuss your project.
-          </p>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+          <div class="mouse-icon">
+            <div class="mouse-wheel"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Showcase Section -->
+      <section class="projects-section" data-section="projects">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects-grid">
+          <!-- Project Card 1 -->
+          <article class="project-showcase-card">
+            <div class="project-image-container">
+              <img src="../assets/project-placeholder-1.jpg" alt="Project 1" class="project-showcase-image" onerror="this.style.backgroundColor='var(--bg-overlay)'">
+            </div>
+            <div class="project-showcase-content">
+              <h3 class="project-showcase-title">E-Commerce Redesign</h3>
+              <p class="project-showcase-description">
+                Complete redesign of an e-commerce platform focusing on improving user flow and increasing conversion rates through intuitive design patterns.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">Prototyping</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-showcase-card">
+            <div class="project-image-container">
+              <img src="../assets/project-placeholder-2.jpg" alt="Project 2" class="project-showcase-image" onerror="this.style.backgroundColor='var(--bg-overlay)'">
+            </div>
+            <div class="project-showcase-content">
+              <h3 class="project-showcase-title">Mobile Banking App</h3>
+              <p class="project-showcase-description">
+                Designed a secure and user-friendly mobile banking experience with focus on accessibility and seamless transaction flows for all users.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Mobile Design</span>
+                <span class="project-tag">User Flows</span>
+                <span class="project-tag">Accessibility</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-showcase-card">
+            <div class="project-image-container">
+              <img src="../assets/project-placeholder-3.jpg" alt="Project 3" class="project-showcase-image" onerror="this.style.backgroundColor='var(--bg-overlay)'">
+            </div>
+            <div class="project-showcase-content">
+              <h3 class="project-showcase-title">SaaS Dashboard</h3>
+              <p class="project-showcase-description">
+                Created an analytics dashboard for a SaaS platform with data visualization, real-time updates, and customizable widgets for power users.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Dashboard</span>
+                <span class="project-tag">Data Viz</span>
+                <span class="project-tag">Design System</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Pricing Plans Section -->
+      <section class="pricing-section">
+        <h2 class="section-title">Pricing Plans</h2>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-grid">
+          <!-- Basic Plan -->
+          <div class="pricing-card">
+            <div class="plan-header">
+              <h3 class="plan-name">Basic</h3>
+              <p class="plan-subtitle">1 Screen Mobile App/Website</p>
+            </div>
+            <div class="plan-price">
+              <span class="currency">₹</span>
+              <span class="amount">900</span>
+            </div>
+            <p class="plan-description">1 Screen Mobile App/Website. Deliver in PNG or Figma</p>
+
+            <div class="plan-features">
+              <div class="feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>1-day delivery</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="17 1 21 5 17 9"></polyline>
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                  <polyline points="7 23 3 19 7 15"></polyline>
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+                <span>3 Revisions</span>
+              </div>
+            </div>
+
+            <button class="details-toggle" aria-label="Toggle plan details" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              <span>View Details</span>
+            </button>
+
+            <div class="plan-includes">
+              <h4 class="includes-title">Includes:</h4>
+              <ul class="includes-list">
+                <li>1 page/screen</li>
+                <li>UI design</li>
+                <li>Include source file</li>
+              </ul>
+            </div>
+
+            <button class="plan-cta" data-plan="Basic" data-price="900" data-delivery="1-day" data-revisions="3">Get Started</button>
+          </div>
+
+          <!-- Standard Plan -->
+          <div class="pricing-card featured">
+            <div class="featured-badge">Popular</div>
+            <div class="plan-header">
+              <h3 class="plan-name">Standard</h3>
+              <p class="plan-subtitle">5 Screen Mobile App/Website</p>
+            </div>
+            <div class="plan-price">
+              <span class="currency">₹</span>
+              <span class="amount">4,500</span>
+            </div>
+            <p class="plan-description">5 Screen Mobile App/Website. Deliver in PNG or Figma</p>
+
+            <div class="plan-features">
+              <div class="feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>3-day delivery</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="17 1 21 5 17 9"></polyline>
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                  <polyline points="7 23 3 19 7 15"></polyline>
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+                <span>5 Revisions</span>
+              </div>
+            </div>
+
+            <button class="details-toggle" aria-label="Toggle plan details" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              <span>View Details</span>
+            </button>
+
+            <div class="plan-includes">
+              <h4 class="includes-title">Includes:</h4>
+              <ul class="includes-list">
+                <li>5 pages/screens</li>
+                <li>User research</li>
+                <li>Competitive UX analysis</li>
+                <li>User flows</li>
+                <li>Prototype</li>
+                <li>UI design</li>
+                <li>Include source file</li>
+              </ul>
+            </div>
+
+            <button class="plan-cta" data-plan="Standard" data-price="4,500" data-delivery="3-day" data-revisions="5">Get Started</button>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="pricing-card">
+            <div class="plan-header">
+              <h3 class="plan-name">Premium</h3>
+              <p class="plan-subtitle">10 Screen Mobile App/Website</p>
+            </div>
+            <div class="plan-price">
+              <span class="currency">₹</span>
+              <span class="amount">10,000</span>
+            </div>
+            <p class="plan-description">10 Screen Mobile App/Website. Deliver in PNG or Figma</p>
+
+            <div class="plan-features">
+              <div class="feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>7-day delivery</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="17 1 21 5 17 9"></polyline>
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                  <polyline points="7 23 3 19 7 15"></polyline>
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+                <span>Unlimited Revisions</span>
+              </div>
+            </div>
+
+            <button class="details-toggle" aria-label="Toggle plan details" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              <span>View Details</span>
+            </button>
+
+            <div class="plan-includes">
+              <h4 class="includes-title">Includes:</h4>
+              <ul class="includes-list">
+                <li>10 pages/screens</li>
+                <li>User research</li>
+                <li>Competitive UX analysis</li>
+                <li>User Interview</li>
+                <li>User Persona</li>
+                <li>IA & User flows</li>
+                <li>Prototype</li>
+                <li>UI design</li>
+                <li>Include source file</li>
+              </ul>
+            </div>
+
+            <button class="plan-cta" data-plan="Premium" data-price="10,000" data-delivery="7-day" data-revisions="Unlimited">Get Started</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Stories Section -->
+      <section class="success-section" data-section="success">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="testimonials-container">
+          <!-- Testimonial cards will be added here -->
         </div>
       </section>
     </div>
 
-    <!-- Dock -->
-    <div class="dock" id="dock">
-      <button class="dock-item" data-theme="green" id="themeGreen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <span class="dock-item-label">Green</span>
-      </button>
-      <button class="dock-item" data-theme="mono" id="themeMono">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-        <span class="dock-item-label">Mono</span>
-      </button>
+    <!-- Pricing Tooltip Cursor -->
+    <div class="pricing-tooltip-cursor" id="pricingTooltipCursor">
+      <h4 class="tooltip-title">Includes:</h4>
+      <ul class="tooltip-list" id="tooltipList"></ul>
+    </div>
+
+    <!-- Project Custom Cursor -->
+    <div class="project-custom-cursor" id="projectCustomCursor">View Project</div>
+
+    <!-- Dynamic Expanding Dock Menu -->
+    <div class="dock-menu" id="dockMenu">
+      <!-- Icons will be dynamically populated by JavaScript -->
     </div>
 
     <script src="freelance.js"></script>

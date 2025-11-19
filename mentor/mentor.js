@@ -1906,10 +1906,10 @@ function handleDockAction(action) {
 
   switch (action) {
     case "hire":
-      alert("Hire Me page - Coming soon!");
+      window.location.href = "../hire/hire.html";
       break;
     case "freelance":
-      alert("Freelance Support page - Coming soon!");
+      window.location.href = "../freelance/freelance.html";
       break;
     case "about":
       window.location.href = "../about/about.html";

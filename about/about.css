@@ -1,62 +1,6 @@
 /* ========================================
-   THEME VARIABLES
-======================================== */
-:root {
-  --primary-color: #0cc060;
-  --primary-dark: #0c984e;
-  --accent-color: #39ff14;
-  --bg-gradient: #06c974;
-  --border-color: rgba(12, 152, 78, 0.3);
-  --bg-overlay: rgba(12, 152, 78, 0.1);
-  --glow-color: rgba(12, 152, 78, 0.3);
-}
-
-/* Blue Theme */
-body.theme-blue {
-  --primary-color: #60c0ff;
-  --primary-dark: #4e98c0;
-  --accent-color: #14c8ff;
-  --bg-gradient: #74b9c9;
-  --border-color: rgba(78, 152, 192, 0.3);
-  --bg-overlay: rgba(78, 152, 192, 0.1);
-  --glow-color: rgba(78, 152, 192, 0.3);
-}
-
-/* Purple Theme */
-body.theme-purple {
-  --primary-color: #c060ff;
-  --primary-dark: #984ec0;
-  --accent-color: #e814ff;
-  --bg-gradient: #b974c9;
-  --border-color: rgba(152, 78, 192, 0.3);
-  --bg-overlay: rgba(152, 78, 192, 0.1);
-  --glow-color: rgba(152, 78, 192, 0.3);
-}
-
-/* Amber Theme */
-body.theme-amber {
-  --primary-color: #ffc060;
-  --primary-dark: #c0984e;
-  --accent-color: #ffd814;
-  --bg-gradient: #c9b974;
-  --border-color: rgba(192, 152, 78, 0.3);
-  --bg-overlay: rgba(192, 152, 78, 0.1);
-  --glow-color: rgba(192, 152, 78, 0.3);
-}
-
-/* Pink Theme */
-body.theme-pink {
-  --primary-color: #ff60c0;
-  --primary-dark: #c04e98;
-  --accent-color: #ff14e8;
-  --bg-gradient: #c974b9;
-  --border-color: rgba(192, 78, 152, 0.3);
-  --bg-overlay: rgba(192, 78, 152, 0.1);
-  --glow-color: rgba(192, 78, 152, 0.3);
-}
-
-/* ========================================
-   GLOBAL STYLES
+   ABOUT PAGE - CUSTOM STYLES
+   Note: Common variables and themes in shared.css
 ======================================== */
 * {
   margin: 0;
@@ -78,92 +22,12 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ========================================
-   BACKGROUND EFFECTS - Optimized for performance
-======================================== */
-.animated-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -10;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse at center,
-    var(--bg-gradient) 0%,
-    #000 70%
-  );
-  /* Use only opacity animation - GPU accelerated, no repaints */
-  animation: fadeGlow 12s ease-in-out infinite;
-  opacity: 0.15;
-  filter: blur(40px);
-  /* Hint browser for GPU optimization */
-  will-change: opacity;
-}
+/* Note: Background effects, terminal loader, animations moved to shared.css */
 
-@keyframes fadeGlow {
-  0%, 100% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.25;
-  }
-}
-
-.grid-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(173, 216, 230, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(173, 216, 230, 0.2) 1px, transparent 1px);
-  background-size: 5px 5px;
-  mask-image: linear-gradient(to top, transparent 30%, rgba(255, 255, 255, 0.423) 50%, transparent 70%);
-  mask-size: 100% 300%;
-  mask-position: 0 100%;
-  animation: gradientReveal 12s ease-in-out infinite;
-}
-
+/* Page-specific animation */
 @keyframes gradientReveal {
   0% { mask-position: 0 100%; }
   100% { mask-position: 0 0%; }
-}
-
-/* ========================================
-   TERMINAL LOADER
-======================================== */
-.terminal-loader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0f0f0f;
-  z-index: 9999;
-  transition: opacity 0.6s ease;
-}
-
-.terminal-loader.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.terminal-text {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  text-shadow: 0 0 10px var(--glow-color);
-}
-
-.dots::after {
-  content: "";
-  animation: dots 1.5s steps(4) infinite;
-}
-
-@keyframes dots {
-  0% { content: ""; }
-  25% { content: "."; }
-  50% { content: ".."; }
-  75% { content: "..."; }
 }
 
 /* ========================================
@@ -282,7 +146,7 @@ body {
 }
 
 .intro-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 2rem;
   line-height: 1.2;
 }
@@ -291,7 +155,7 @@ body {
   display: block;
   opacity: 0;
   text-shadow: 0 0 20px var(--glow-color);
-  transform: translateY(60px) scale(0.8); /* ADD THIS */
+  transform: translateY(60px) scale(0.8);
 }
 
 .line2 {
@@ -306,7 +170,7 @@ body {
 .intro-description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--primary-color);
+  color: #a0a0a0;
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(50px); /* ADD THIS */
@@ -386,11 +250,12 @@ body {
 }
 
 .journey-main-title {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.05em;
-  text-shadow: 0 0 50px var(--glow-color);
+  text-shadow: 0 0 40px var(--glow-color);
+  text-transform: uppercase;
   margin-bottom: 0;
 }
 
@@ -1104,12 +969,13 @@ body {
 /* Section Title */
 .recommendations-section .section-title {
   text-align: center;
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.05em;
-  margin-bottom: 6rem;
-  text-shadow: 0 0 50px var(--glow-color);
+  margin-bottom: 5rem;
+  text-shadow: 0 0 40px var(--glow-color);
+  text-transform: uppercase;
 }
 
 /* Cards Container - Like Journey Section */
@@ -1818,7 +1684,7 @@ body {
   }
 
   .journey-main-title {
-    font-size: clamp(2rem, 9vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 
   .cards-container {
@@ -2031,8 +1897,8 @@ body {
   }
 
   .recommendations-section .section-title {
-    font-size: clamp(2rem, 9vw, 3.5rem);
-    margin-bottom: 4rem;
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 3rem;
   }
 
   .recommendations-container {
@@ -2186,7 +2052,7 @@ body {
 
   /* ===== SECTION TITLES ===== */
   .section-title {
-    font-size: clamp(2rem, 9vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
     margin-bottom: 3rem;
   }
 
