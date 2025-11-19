@@ -1,9 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const Groq = require("groq-sdk");
+require("dotenv").config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
@@ -16,7 +17,7 @@ app.use(express.json());
 
 // Initialize Groq client
 const groq = new Groq({
-  apiKey: "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",
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 let activeVisitors = 0;
