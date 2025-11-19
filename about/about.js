@@ -172,7 +172,7 @@ const skillsDataNew = {
   tools: [
     { name: 'Figma', logo: '/assets/Figma.png' },
     { name: 'Photoshop', logo: '/assets/photoshop.png' },
-    { name: 'Illustrator', logo: '/assets/illustrator.png' },
+    { name: 'Illustrator', logo: '/assets/Illustrator.png' },
     { name: 'InDesign', logo: '/assets/indesign.png' },
     { name: 'Corel Draw', logo: '/assets/coreldraw.jpg' },
     { name: 'Framer', logo: '/assets/framer.jpg' },
