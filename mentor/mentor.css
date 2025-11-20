@@ -605,7 +605,7 @@ section.revealed {
 
 .ai-tools-title {
   font-size: 0.7rem;
-  color: var(--border-color);
+  color: rgba(12, 192, 96, 0.8);
   font-weight: 700;
   letter-spacing: 0.15em;
   text-align: center;
