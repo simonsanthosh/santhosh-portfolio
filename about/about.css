@@ -306,7 +306,7 @@ body {
 .intro-description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--primary-color);
+  color: #a0a0a0;
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(50px); /* ADD THIS */
