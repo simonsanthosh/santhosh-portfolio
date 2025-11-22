@@ -223,8 +223,7 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: drawPath 3s ease-in-out infinite alternate, logoShine 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px var(--glow-color));
+  animation: drawPath 3s ease-in-out infinite alternate;
 }
 
 .logo-svg path:nth-child(1) {
@@ -862,10 +861,10 @@ body.theme-mono .ai-chat-toggle-wrapper {
 .status-dot {
   width: 8px;
   height: 8px;
-  background: var(--accent-color);
+  background: var(--primary-color);
   border-radius: 50%;
   animation: pulseGlow 2s ease-in-out infinite;
-  box-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color);
+  box-shadow: 0 0 4px var(--primary-color), 0 0 8px var(--primary-color);
 }
 
 @keyframes pulseGlow {
@@ -873,12 +872,12 @@ body.theme-mono .ai-chat-toggle-wrapper {
   100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 4px var(--accent-color), 0 0 8px var(--accent-color);
+    box-shadow: 0 0 4px var(--primary-color), 0 0 8px var(--primary-color);
   }
   50% {
     opacity: 0.7;
     transform: scale(1.2);
-    box-shadow: 0 0 6px var(--accent-color), 0 0 12px var(--accent-color), 0 0 18px var(--accent-color);
+    box-shadow: 0 0 6px var(--primary-color), 0 0 12px var(--primary-color), 0 0 18px var(--primary-color);
   }
 }
 
@@ -986,6 +985,16 @@ body.theme-mono .ai-chat-toggle-wrapper {
   );
   opacity: 0.15;
   filter: blur(40px);
+  animation: fadeGlowBg 12s ease-in-out infinite;
+}
+
+@keyframes fadeGlowBg {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.25;
+  }
 }
 
 /* Page-specific grid animation */
