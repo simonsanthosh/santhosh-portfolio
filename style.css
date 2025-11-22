@@ -803,7 +803,7 @@ body.theme-mono .ai-chat-toggle-wrapper {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--accent-color),
+    var(--primary-color),
     transparent
   );
   animation: scanLine 2s ease-in-out infinite;
