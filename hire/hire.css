@@ -32,7 +32,7 @@ body {
 .animated-bg {
   background: radial-gradient(
     ellipse at center,
-    var(--bg-gradient) 0%,
+    #06c974 0%,
     #000 70%
   );
   opacity: 0.15;
