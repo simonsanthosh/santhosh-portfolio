@@ -28,6 +28,17 @@ body {
 
 /* Note: .animated-bg, .grid-overlay, .terminal-loader moved to shared.css */
 
+/* Override animated-bg for hire page with radial gradient effect */
+.animated-bg {
+  background: radial-gradient(
+    ellipse at center,
+    var(--bg-gradient) 0%,
+    #000 70%
+  );
+  opacity: 0.15;
+  filter: blur(40px);
+}
+
 /* Page-specific animation for grid */
 @keyframes gradientReveal {
   0% { mask-position: 0 100%; }

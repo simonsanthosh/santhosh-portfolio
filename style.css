@@ -197,7 +197,7 @@ body {
 }
 
 .progress-bar {
-  stroke: var(--accent-color);
+  stroke: var(--primary-color);
   stroke-dasharray: 421.238;
   stroke-dashoffset: 421.238;
   stroke-linecap: round;
@@ -217,13 +217,14 @@ body {
 
 .logo-svg path {
   fill: none;
-  stroke: var(--primary-dark);
+  stroke: var(--primary-color);
   stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: drawPath 3s ease-in-out infinite alternate;
+  animation: drawPath 3s ease-in-out infinite alternate, logoShine 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px var(--glow-color));
 }
 
 .logo-svg path:nth-child(1) {
@@ -245,6 +246,15 @@ body {
   }
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes logoShine {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px var(--glow-color));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--glow-color)) drop-shadow(0 0 30px var(--primary-color));
   }
 }
 
@@ -967,6 +977,17 @@ body.theme-mono .ai-chat-toggle-wrapper {
 
 /* Note: .animated-bg, .grid-overlay, fadeGlow moved to shared.css */
 
+/* Override animated-bg for index page with radial gradient effect */
+.animated-bg {
+  background: radial-gradient(
+    ellipse at center,
+    var(--bg-gradient) 0%,
+    #000 70%
+  );
+  opacity: 0.15;
+  filter: blur(40px);
+}
+
 /* Page-specific grid animation */
 @keyframes gradientReveal {
   0% {
@@ -993,9 +1014,9 @@ body.theme-mono .ai-chat-toggle-wrapper {
   position: absolute;
   width: var(--charge-size, 6px);
   height: var(--charge-size, 6px);
-  background: var(--accent-color);
+  background: var(--primary-color);
   border-radius: 0%;
-  box-shadow: 0 0 8px var(--accent-color), 0 0 16px var(--accent-color), 0 0 24px var(--accent-color);
+  box-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--primary-color), 0 0 24px var(--primary-color);
   animation: tracePerimeterSine 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   transition: box-shadow 0.15s ease-out;
   will-change: transform, box-shadow;
@@ -1040,10 +1061,10 @@ body.theme-mono .ai-chat-toggle-wrapper {
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 8px var(--accent-color), 0 0 16px var(--accent-color), 0 0 24px var(--accent-color);
+    box-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--primary-color), 0 0 24px var(--primary-color);
   }
   50% {
-    box-shadow: 0 0 12px var(--accent-color), 0 0 24px var(--accent-color), 0 0 36px var(--accent-color);
+    box-shadow: 0 0 12px var(--primary-color), 0 0 24px var(--primary-color), 0 0 36px var(--primary-color);
   }
 }
 
@@ -1051,8 +1072,8 @@ body.theme-mono .ai-chat-toggle-wrapper {
 .perimeter-loader.burst::before {
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
-  box-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color), 0 0 60px var(--accent-color);
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  box-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color), 0 0 60px var(--primary-color);
   animation: burstPulse 0.4s ease-out;
 }
 
