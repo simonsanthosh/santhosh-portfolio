@@ -175,7 +175,7 @@ const skillsDataNew = {
     { name: 'Illustrator', logo: '/assets/Illustrator.png' },
     { name: 'InDesign', logo: '/assets/indesign.png' },
     { name: 'Corel Draw', logo: '/assets/coreldraw.jpg' },
-    { name: 'Framer', logo: '/assets/framer.jpg' },
+    { name: 'Framer', logo: '/assets/framer.png' },
     { name: 'Whimsical', logo: '/assets/whimsical.jpg' },
     { name: 'Miro', logo: '/assets/miro.png' },
     { name: 'Maze', logo: '/assets/maze.jpeg' },
