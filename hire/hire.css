@@ -49,7 +49,19 @@ body {
   }
 }
 
-/* Page-specific animation for grid */
+/* Override grid-overlay for hire page with moving sweep effect */
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(173, 216, 230, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(173, 216, 230, 0.2) 1px, transparent 1px);
+  background-size: 5px 5px;
+  mask-image: linear-gradient(to top, transparent 30%, rgba(255, 255, 255, 0.423) 50%, transparent 70%);
+  mask-size: 100% 300%;
+  mask-position: 0 100%;
+  animation: gradientReveal 12s ease-in-out infinite;
+}
+
+/* Grid reveal animation */
 @keyframes gradientReveal {
   0% { mask-position: 0 100%; }
   100% { mask-position: 0 0%; }
