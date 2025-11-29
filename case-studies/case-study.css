@@ -1583,6 +1583,18 @@ footer {
   transform: translateY(-2px);
 }
 
+.case-nav-link.inactive {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.case-nav-link.inactive:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: none;
+}
+
 .prev-case,
 .next-case {
   flex-direction: row;
