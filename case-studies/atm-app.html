@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRAVAAN ATM App - Case Study | Santhosh</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/S_Logo_Thick.svg" />
+    <link rel="icon" type="image/png" href="/assets/S_Logo.png" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Cascadia+Code&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="case-study.css" />
+
+    <!-- AOS - Animate On Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Swiper.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Background Effects -->
+    <div class="animated-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="case-nav">
+      <button
+        class="home-btn"
+        onclick="window.location.href='/'"
+        aria-label="Go to home page"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      </button>
+      <div class="nav-center">
+        <div class="nav-logos">
+          <img
+            src="../assets/TPS.png"
+            alt="The Pixel Society"
+            class="client-logo tps-logo"
+          />
+          <span class="logo-divider">|</span>
+          <img
+            src="../assets/iravaan_logo.png"
+            alt="IRAVAAN"
+            class="client-logo iravaan-logo"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="reading-progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-tag" data-aos="fade-up">Case Study 2025</div>
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+          <span class="typing-text">IRAVAAN</span>
+        </h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+          ATM Money Management System for One India ATM
+        </p>
+
+        <div class="hero-meta" data-aos="fade-up" data-aos-delay="300">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">UI/UX Designer</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Duration</span>
+            <span class="meta-value">3 Days</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Tools</span>
+            <span class="meta-value">Figma</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Platform</span>
+            <span class="meta-value">Mobile App</span>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hero-image" data-aos="fade-up" data-aos-delay="400">
+          <img
+            src="../assets/atm_cover.png"
+            alt="IRAVAAN ATM App Interface"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid" data-aos="fade-up">
+          <div class="stat-card">
+            <div class="stat-value">Instant Success</div>
+            <div class="stat-label">Adoption Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Zero Errors</div>
+            <div class="stat-label">Post Launch</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Multiple Users</div>
+            <div class="stat-label">Active Loadmen</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="content-section">
+      <div class="container-narrow">
+        <h2 class="section-title" data-aos="fade-up">Overview</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            IRAVAAN is a comprehensive internal ATM money management system
+            designed exclusively for One India ATM, a client who owns and
+            operates ATMs across multiple branches. This internal application
+            bridges the gap between ATM operators and loadmen (personnel who
+            load cash into ATMs), providing real-time visibility into cash
+            levels, denomination breakdowns, and loading history. The app is not
+            available on public app stores as it serves as a private,
+            enterprise-level solution for managing ATM operations and loadman
+            coordination.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="content-section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">The Problem</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            ATM operators at One India ATM were facing critical operational
+            challenges with manual money tracking:
+          </p>
+
+          <div class="problem-list">
+            <div class="problem-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="problem-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div class="problem-content">
+                <h4>No Real-Time Visibility</h4>
+                <p>
+                  Operators had no instant way to check current money levels
+                  across multiple ATM branches.
+                </p>
+              </div>
+            </div>
+
+            <div class="problem-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="problem-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div class="problem-content">
+                <h4>Manual Calculation Errors</h4>
+                <p>
+                  Loadmen manually calculated total amounts from denomination
+                  counts (₹500, ₹200, ₹100), leading to human errors.
+                </p>
+              </div>
+            </div>
+
+            <div class="problem-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="problem-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div class="problem-content">
+                <h4>Lack of Accountability</h4>
+                <p>
+                  No transparent system to track who loaded money, when, and
+                  where.
+                </p>
+              </div>
+            </div>
+
+            <div class="problem-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="problem-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <div class="problem-content">
+                <h4>Delayed Refill Response</h4>
+                <p>
+                  Manual tracking led to delayed notifications when ATMs ran low
+                  on cash.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">The Challenge</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            The challenge wasn't just digitizing the process—it was about
+            creating an intuitive system that could handle complex data
+            relationships while remaining simple enough for non-tech-savvy
+            loadmen to use daily. I needed to:
+          </p>
+
+          <div class="challenge-list">
+            <div class="challenge-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="challenge-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="challenge-content">
+                <h4>Information Architecture</h4>
+                <p>
+                  Design a clear hierarchy for managing multiple ATMs, loadmen,
+                  and denomination breakdowns without overwhelming users.
+                </p>
+              </div>
+            </div>
+
+            <div class="challenge-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="challenge-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="challenge-content">
+                <h4>Error Prevention</h4>
+                <p>
+                  Create an input system that eliminates manual calculation
+                  errors while maintaining speed.
+                </p>
+              </div>
+            </div>
+
+            <div class="challenge-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="challenge-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="challenge-content">
+                <h4>Role-Based Design</h4>
+                <p>
+                  Balance different user needs—admins need oversight, loadmen
+                  need quick data entry.
+                </p>
+              </div>
+            </div>
+
+            <div class="challenge-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="challenge-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div class="challenge-content">
+                <h4>Real-Time Transparency</h4>
+                <p>
+                  Build trust through instant visibility into all transactions
+                  and money movements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research & Insights -->
+    <section class="content-section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Research & Insights</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            I conducted interviews with ATM operators and loadmen to understand
+            their daily workflow and pain points. Here's what I discovered:
+          </p>
+
+          <div class="insight-list">
+            <div class="insight-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="insight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <div class="insight-content">
+                <h4>Dashboard Priority</h4>
+                <p>
+                  Operators needed an at-a-glance view showing all ATMs and
+                  their status. Color-coded indicators were crucial for quick
+                  decision-making.
+                </p>
+              </div>
+            </div>
+
+            <div class="insight-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="insight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div class="insight-content">
+                <h4>Speed Over Complexity</h4>
+                <p>
+                  Loadmen work in time-sensitive environments. They needed to
+                  enter denomination counts in under 30 seconds with zero room
+                  for calculation errors.
+                </p>
+              </div>
+            </div>
+
+            <div class="insight-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="insight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <div class="insight-content">
+                <h4>Trust Through Transparency</h4>
+                <p>
+                  Both parties needed to see the same data in real-time. Any
+                  delay or discrepancy would undermine trust in the system.
+                </p>
+              </div>
+            </div>
+
+            <div class="insight-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="insight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                </svg>
+              </div>
+              <div class="insight-content">
+                <h4>Proactive Notifications</h4>
+                <p>
+                  Operators wanted to be alerted before ATMs ran critically low,
+                  not after customer complaints started coming in.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Information Architecture -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Information Architecture
+        </h2>
+        <div
+          class="content-text"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          style="max-width: 760px; margin-left: auto; margin-right: auto"
+        >
+          <p>
+            I structured the app into two distinct user flows—Admin and
+            Loadman—each with role-specific navigation and features. Here's how
+            the information hierarchy was organized:
+          </p>
+        </div>
+
+        <!-- IA Diagram -->
+        <div class="ia-diagram-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <!-- Admin Flow -->
+          <div class="ia-flow">
+            <div class="ia-header">
+              <h3>Admin Flow</h3>
+              <span class="ia-badge admin-badge">Oversight & Management</span>
+            </div>
+            <div class="ia-structure">
+              <div class="ia-level">
+                <div class="ia-node primary">
+                  <span class="node-label">Admin Panel</span>
+                  <span class="node-desc"
+                    >Dashboard with total deposit overview</span
+                  >
+                </div>
+              </div>
+              <div class="ia-connector"></div>
+              <div class="ia-level">
+                <div class="ia-node secondary">
+                  <span class="node-label">ATM Management</span>
+                  <span class="node-desc"
+                    >List of all ATMs with status indicators</span
+                  >
+                </div>
+              </div>
+              <div class="ia-branches">
+                <div class="ia-branch">
+                  <div class="ia-connector-branch"></div>
+                  <div class="ia-node tertiary">
+                    <span class="node-label">Add User</span>
+                    <span class="node-desc">Create loadman accounts</span>
+                  </div>
+                </div>
+                <div class="ia-branch">
+                  <div class="ia-connector-branch"></div>
+                  <div class="ia-node tertiary">
+                    <span class="node-label">ATM Details</span>
+                    <span class="node-desc">View denomination breakdown</span>
+                  </div>
+                </div>
+                <div class="ia-branch">
+                  <div class="ia-connector-branch"></div>
+                  <div class="ia-node tertiary">
+                    <span class="node-label">Deposit History</span>
+                    <span class="node-desc"
+                      >Track completed deposits with timestamps</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loadman Flow -->
+          <div class="ia-flow">
+            <div class="ia-header">
+              <h3>Loadman Flow</h3>
+              <span class="ia-badge loadman-badge">Quick Data Entry</span>
+            </div>
+            <div class="ia-structure">
+              <div class="ia-level">
+                <div class="ia-node primary">
+                  <span class="node-label">Loadman Dashboard</span>
+                  <span class="node-desc">Personal deposit total overview</span>
+                </div>
+              </div>
+              <div class="ia-connector"></div>
+              <div class="ia-level">
+                <div class="ia-node secondary">
+                  <span class="node-label">My ATMs</span>
+                  <span class="node-desc">Assigned ATMs with status</span>
+                </div>
+              </div>
+              <div class="ia-branches">
+                <div class="ia-branch">
+                  <div class="ia-connector-branch"></div>
+                  <div class="ia-node tertiary">
+                    <span class="node-label">Add Denomination</span>
+                    <span class="node-desc"
+                      >Input ₹500, ₹200, ₹100 note counts</span
+                    >
+                  </div>
+                </div>
+                <div class="ia-branch">
+                  <div class="ia-connector-branch"></div>
+                  <div class="ia-node tertiary">
+                    <span class="node-label">ATM Details</span>
+                    <span class="node-desc">View required money breakdown</span>
+                  </div>
+                </div>
+                <div class="ia-branch">
+                  <div class="ia-connector-branch"></div>
+                  <div class="ia-node tertiary">
+                    <span class="node-label">Deposit Confirmation</span>
+                    <span class="node-desc"
+                      >Checkbox verification before submit</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key IA Decisions -->
+        <div
+          class="content-text"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          style="max-width: 760px; margin-left: auto; margin-right: auto"
+        >
+          <h4
+            style="
+              margin-top: 48px;
+              margin-bottom: 16px;
+              font-size: 18px;
+              font-weight: 600;
+              text-align: center;
+            "
+          >
+            Key IA Decisions
+          </h4>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              max-width: 600px;
+              margin: 0 auto;
+            "
+          >
+            <li
+              style="padding-left: 24px; position: relative; text-align: left"
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  color: var(--primary-color, #0cc060);
+                "
+                >→</span
+              >
+              Separated admin and loadman interfaces completely to avoid
+              confusion and feature bloat
+            </li>
+            <li
+              style="padding-left: 24px; position: relative; text-align: left"
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  color: var(--primary-color, #0cc060);
+                "
+                >→</span
+              >
+              Kept navigation shallow (max 3 levels deep) for quick access to
+              any feature
+            </li>
+            <li
+              style="padding-left: 24px; position: relative; text-align: left"
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  color: var(--primary-color, #0cc060);
+                "
+                >→</span
+              >
+              Positioned denomination entry as a modal to maintain context and
+              speed
+            </li>
+            <li
+              style="padding-left: 24px; position: relative; text-align: left"
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  color: var(--primary-color, #0cc060);
+                "
+                >→</span
+              >
+              Made status indicators (Pending/Completed) visible at every level
+              for transparency
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Solution -->
+    <section class="content-section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">The Solution</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            I designed a dual-interface system with distinct experiences for
+            admins and loadmen, each optimized for their specific workflows.
+          </p>
+        </div>
+
+        <!-- Solution Cards -->
+        <div class="solution-grid">
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="solution-header">
+              <h3>For Admins</h3>
+            </div>
+            <ul class="solution-features">
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Dashboard showing all ATMs with real-time money levels
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Create and manage loadmen for each ATM branch
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Track which loadman loaded which ATM with timestamps
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Receive push notifications when ATM money runs low
+              </li>
+            </ul>
+          </div>
+
+          <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="solution-header">
+              <h3>For Loadmen</h3>
+            </div>
+            <ul class="solution-features">
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Quick denomination entry with number steppers
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Real-time auto-calculation of total amount
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                One-tap upload to system with instant confirmation
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                View assigned ATMs and loading history
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UX Solutions -->
+    <section class="content-section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          UX Solutions Implemented
+        </h2>
+
+        <div class="ux-solution-list">
+          <div class="ux-solution-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="ux-solution-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+            </div>
+            <div class="ux-solution-content">
+              <h4>Visual Hierarchy Through Cards</h4>
+              <p>
+                Used card-based design to separate each ATM clearly. Color-coded
+                status indicators (green = sufficient, yellow = low, red =
+                critical) allowed admins to spot issues instantly without
+                reading detailed numbers.
+              </p>
+            </div>
+          </div>
+
+          <div class="ux-solution-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="ux-solution-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                />
+              </svg>
+            </div>
+            <div class="ux-solution-content">
+              <h4>Smart Input Design</h4>
+              <p>
+                Implemented direct manual entry fields for denomination counts
+                based on the bank's provided denomination list (₹500, ₹200,
+                ₹100, etc.). As loadmen entered the number of notes for each
+                denomination, the app calculated the total amount in real-time,
+                eliminating calculation errors and reducing cognitive load.
+              </p>
+            </div>
+          </div>
+
+          <div class="ux-solution-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="ux-solution-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div class="ux-solution-content">
+              <h4>Role-Based Navigation</h4>
+              <p>
+                Created separate navigation patterns for admins and loadmen.
+                Admins saw overview metrics and management tools, while loadmen
+                saw only their assigned ATMs and quick-entry forms.
+              </p>
+            </div>
+          </div>
+
+          <div class="ux-solution-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="ux-solution-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="2" x2="12" y2="6" />
+                <line x1="12" y1="18" x2="12" y2="22" />
+                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
+                <line x1="2" y1="12" x2="6" y2="12" />
+                <line x1="18" y1="12" x2="22" y2="12" />
+                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />
+                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" />
+              </svg>
+            </div>
+            <div class="ux-solution-content">
+              <h4>Transparency Through Timeline</h4>
+              <p>
+                Added a timeline view showing who loaded money when, with
+                denomination breakdowns. This created accountability and allowed
+                admins to verify transactions at any time.
+              </p>
+            </div>
+          </div>
+
+          <div class="ux-solution-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="ux-solution-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+            </div>
+            <div class="ux-solution-content">
+              <h4>Proactive Notification System</h4>
+              <p>
+                Implemented threshold-based alerts that notified admins when
+                cash levels dropped below configurable limits. Notifications
+                included which ATM, current amount, and estimated hours until
+                critical level.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design System -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Design System</h2>
+        <p class="content-text" data-aos="fade-up" data-aos-delay="100">
+          A comprehensive design system built for consistency and scalability
+          across the IRAVAAN ATM app.
+        </p>
+
+        <!-- Typography -->
+        <div class="component-category" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="component-category-title">Typography</h3>
+
+          <div class="typography-scale">
+            <div
+              class="typography-item"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <div class="typo-sample typo-h1">Heading 1</div>
+              <div class="typo-specs">
+                <span class="typo-spec-label">Font Size:</span>
+                <span class="typo-spec-value">32px</span>
+                <span class="typo-spec-label">Weight:</span>
+                <span class="typo-spec-value">600 SemiBold</span>
+              </div>
+            </div>
+
+            <div
+              class="typography-item"
+              data-aos="fade-up"
+              data-aos-delay="275"
+            >
+              <div class="typo-sample typo-h2">Heading 2</div>
+              <div class="typo-specs">
+                <span class="typo-spec-label">Font Size:</span>
+                <span class="typo-spec-value">24px</span>
+                <span class="typo-spec-label">Weight:</span>
+                <span class="typo-spec-value">600 SemiBold</span>
+              </div>
+            </div>
+
+            <div
+              class="typography-item"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="typo-sample typo-h3">Heading 3</div>
+              <div class="typo-specs">
+                <span class="typo-spec-label">Font Size:</span>
+                <span class="typo-spec-value">18px</span>
+                <span class="typo-spec-label">Weight:</span>
+                <span class="typo-spec-value">600 SemiBold</span>
+              </div>
+            </div>
+
+            <div
+              class="typography-item"
+              data-aos="fade-up"
+              data-aos-delay="325"
+            >
+              <div class="typo-sample typo-body">Body Text</div>
+              <div class="typo-specs">
+                <span class="typo-spec-label">Font Size:</span>
+                <span class="typo-spec-value">16px</span>
+                <span class="typo-spec-label">Weight:</span>
+                <span class="typo-spec-value">400 Regular</span>
+              </div>
+            </div>
+
+            <div
+              class="typography-item"
+              data-aos="fade-up"
+              data-aos-delay="350"
+            >
+              <div class="typo-sample typo-label">Label Text</div>
+              <div class="typo-specs">
+                <span class="typo-spec-label">Font Size:</span>
+                <span class="typo-spec-value">14px</span>
+                <span class="typo-spec-label">Weight:</span>
+                <span class="typo-spec-value">500 Medium</span>
+              </div>
+            </div>
+
+            <div
+              class="typography-item"
+              data-aos="fade-up"
+              data-aos-delay="375"
+            >
+              <div class="typo-sample typo-caption">Caption Text</div>
+              <div class="typo-specs">
+                <span class="typo-spec-label">Font Size:</span>
+                <span class="typo-spec-value">12px</span>
+                <span class="typo-spec-label">Weight:</span>
+                <span class="typo-spec-value">400 Regular</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colorgraphy -->
+        <div class="component-category" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="component-category-title">Colorgraphy</h3>
+
+          <div class="color-palette">
+            <!-- Primary Colors -->
+            <div class="color-section" data-aos="fade-up" data-aos-delay="425">
+              <h4 class="color-section-title">Primary Colors</h4>
+              <div class="color-grid">
+                <div class="color-box">
+                  <div class="color-preview" style="background: #006a44"></div>
+                  <div class="color-info">
+                    <span class="color-name">Green Primary</span>
+                    <span class="color-hex">#006A44</span>
+                  </div>
+                </div>
+
+                <div class="color-box">
+                  <div class="color-preview" style="background: #fff9ea"></div>
+                  <div class="color-info">
+                    <span class="color-name">Cream Background</span>
+                    <span class="color-hex">#FFF9EA</span>
+                  </div>
+                </div>
+
+                <div class="color-box">
+                  <div class="color-preview" style="background: #0e0e0e"></div>
+                  <div class="color-info">
+                    <span class="color-name">Text Dark</span>
+                    <span class="color-hex">#0E0E0E</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Status Colors -->
+            <div class="color-section" data-aos="fade-up" data-aos-delay="450">
+              <h4 class="color-section-title">Status Colors</h4>
+              <div class="color-grid">
+                <div class="color-box">
+                  <div class="color-preview" style="background: #ffd0a5"></div>
+                  <div class="color-info">
+                    <span class="color-name">Pending Orange</span>
+                    <span class="color-hex">#FFD0A5</span>
+                  </div>
+                </div>
+
+                <div class="color-box">
+                  <div class="color-preview" style="background: #884100"></div>
+                  <div class="color-info">
+                    <span class="color-name">Pending Text</span>
+                    <span class="color-hex">#884100</span>
+                  </div>
+                </div>
+
+                <div class="color-box">
+                  <div
+                    class="color-preview"
+                    style="
+                      background: rgba(0, 106, 68, 0.24);
+                      border: 1px solid rgba(0, 106, 68, 0.4);
+                    "
+                  ></div>
+                  <div class="color-info">
+                    <span class="color-name">Completed Green</span>
+                    <span class="color-hex">rgba(0,106,68,0.24)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accent Colors -->
+            <div class="color-section" data-aos="fade-up" data-aos-delay="475">
+              <h4 class="color-section-title">Accent Colors</h4>
+              <div class="color-grid">
+                <div class="color-box">
+                  <div class="color-preview" style="background: #ffe6c1"></div>
+                  <div class="color-info">
+                    <span class="color-name">Card Background</span>
+                    <span class="color-hex">#FFE6C1</span>
+                  </div>
+                </div>
+
+                <div class="color-box">
+                  <div class="color-preview" style="background: #e5ead9"></div>
+                  <div class="color-info">
+                    <span class="color-name">Profile Background</span>
+                    <span class="color-hex">#E5EAD9</span>
+                  </div>
+                </div>
+
+                <div class="color-box">
+                  <div class="color-preview" style="background: #333333"></div>
+                  <div class="color-info">
+                    <span class="color-name">Dark Gray</span>
+                    <span class="color-hex">#333333</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Iconography -->
+        <div class="component-category" data-aos="fade-up" data-aos-delay="500">
+          <h3 class="component-category-title">Iconography</h3>
+
+          <div class="icon-showcase-grid">
+            <div class="icon-card" data-aos="fade-up" data-aos-delay="525">
+              <div class="icon-preview">
+                <img
+                  src="../assets/ATM_App_Assets/check_box.svg"
+                  alt="Checkbox Icon"
+                  class="icon-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="24px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="24px"
+                  ></div>
+                </div>
+              </div>
+              <div class="icon-info">
+                <h4 class="icon-name">Checkbox</h4>
+                <span class="icon-size">24 × 24px</span>
+              </div>
+            </div>
+
+            <div class="icon-card" data-aos="fade-up" data-aos-delay="540">
+              <div class="icon-preview">
+                <img
+                  src="../assets/ATM_App_Assets/arrow_forward_icon.svg"
+                  alt="Arrow Forward Icon"
+                  class="icon-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="18px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="18px"
+                  ></div>
+                </div>
+              </div>
+              <div class="icon-info">
+                <h4 class="icon-name">Arrow Forward</h4>
+                <span class="icon-size">18 × 18px</span>
+              </div>
+            </div>
+
+            <div class="icon-card" data-aos="fade-up" data-aos-delay="555">
+              <div class="icon-preview">
+                <img
+                  src="../assets/ATM_App_Assets/icons/call icon.svg"
+                  alt="Call Icon"
+                  class="icon-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="24px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="24px"
+                  ></div>
+                </div>
+              </div>
+              <div class="icon-info">
+                <h4 class="icon-name">Call</h4>
+                <span class="icon-size">24 × 24px</span>
+              </div>
+            </div>
+
+            <div class="icon-card" data-aos="fade-up" data-aos-delay="565">
+              <div class="icon-preview">
+                <img
+                  src="../assets/ATM_App_Assets/icons/add money icon.svg"
+                  alt="Add Money Icon"
+                  class="icon-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="24px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="24px"
+                  ></div>
+                </div>
+              </div>
+              <div class="icon-info">
+                <h4 class="icon-name">Add Money</h4>
+                <span class="icon-size">24 × 24px</span>
+              </div>
+            </div>
+
+            <div class="icon-card" data-aos="fade-up" data-aos-delay="575">
+              <div class="icon-preview">
+                <img
+                  src="../assets/ATM_App_Assets/icons/person_add icon.svg"
+                  alt="Add User Icon"
+                  class="icon-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="24px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="24px"
+                  ></div>
+                </div>
+              </div>
+              <div class="icon-info">
+                <h4 class="icon-name">Add User</h4>
+                <span class="icon-size">24 × 24px</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Components -->
+        <div class="component-category" data-aos="fade-up" data-aos-delay="585">
+          <h3 class="component-category-title">Components</h3>
+
+          <!-- Primary Buttons -->
+          <h4
+            class="component-subcategory-title"
+            data-aos="fade-up"
+            data-aos-delay="595"
+          >
+            Primary Buttons
+          </h4>
+
+          <div class="component-showcase-grid">
+            <!-- Submit Button -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="615">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Buttons/Send_Button.svg"
+                  alt="Submit Button"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="154px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="48px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Submit Button</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">154 × 48px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#006A44</span>
+                    <div class="color-swatch" style="background: #006a44"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">10px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Buttons -->
+          <h4
+            class="component-subcategory-title"
+            data-aos="fade-up"
+            data-aos-delay="635"
+          >
+            Secondary Buttons
+          </h4>
+          <div class="component-showcase-grid">
+            <!-- Close Button -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="645">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Buttons/Close_Button.svg"
+                  alt="Close Button"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="154px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="48px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Close Button</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">154 × 48px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Stroke</span>
+                    <span class="spec-value">#006A44</span>
+                    <div class="color-swatch" style="background: #006a44"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">10px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <h4
+            class="component-subcategory-title"
+            data-aos="fade-up"
+            data-aos-delay="665"
+          >
+            Action Buttons
+          </h4>
+          <div class="component-showcase-grid">
+            <!-- Add Money -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="675">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Buttons/Add_Money.svg"
+                  alt="Add Money Button"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="56px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="56px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Add Money</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">56 × 56px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#006A44</span>
+                    <div class="color-swatch" style="background: #006a44"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">50%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add User -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="690">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Buttons/Add_User.svg"
+                  alt="Add User Button"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="56px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="56px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Add User</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">56 × 56px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#006A44</span>
+                    <div class="color-swatch" style="background: #006a44"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">50%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Call Loadman -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="705">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Buttons/Call.svg"
+                  alt="Call Loadman Button"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="56px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="56px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Call Loadman</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">56 × 56px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#006A44</span>
+                    <div class="color-swatch" style="background: #006a44"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">50%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badges -->
+          <h4
+            class="component-subcategory-title"
+            data-aos="fade-up"
+            data-aos-delay="725"
+          >
+            Badges
+          </h4>
+          <div class="component-showcase-grid">
+            <!-- Completed Badge -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="735">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Status/Completed_Status.svg"
+                  alt="Completed Badge"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="117px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="31px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Completed</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">117 × 31px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#C2DBD2</span>
+                    <div class="color-swatch" style="background: #C2DBD2"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">10px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Badge -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="750">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Status/Pending_Status.svg"
+                  alt="Pending Badge"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="98px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="31px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Pending</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">98 × 31px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#FFD0A5</span>
+                    <div class="color-swatch" style="background: #ffd0a5"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Radius</span>
+                    <span class="spec-value">10px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Profile -->
+            <div class="component-card" data-aos="fade-up" data-aos-delay="765">
+              <div class="component-preview">
+                <img
+                  src="../assets/ATM_App_Assets/Add_Profile.svg"
+                  alt="Add Profile"
+                  class="component-svg"
+                />
+                <div class="dimension-overlay">
+                  <div
+                    class="dimension-arrow horizontal"
+                    data-dimension="80px"
+                  ></div>
+                  <div
+                    class="dimension-arrow vertical"
+                    data-dimension="80px"
+                  ></div>
+                </div>
+              </div>
+              <div class="component-info">
+                <h4 class="component-name">Add Profile</h4>
+                <div class="component-specs">
+                  <div class="spec-row">
+                    <span class="spec-label">Size</span>
+                    <span class="spec-value">80 × 80px</span>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Fill</span>
+                    <span class="spec-value">#E5EAD9</span>
+                    <div class="color-swatch" style="background: #e5ead9"></div>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label">Badge</span>
+                    <span class="spec-value">#006A44</span>
+                    <div class="color-swatch" style="background: #006a44"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UI Flow Showcase - Mouse Interactive Slider -->
+    <section class="content-section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">UI Flow Showcase</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Explore the screen flows - swipe to navigate through the interface
+        </p>
+
+        <!-- Admin Flow -->
+        <div class="flow-section" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="flow-title">Admin Flow</h3>
+          <div class="ui-slider-container">
+            <div class="ui-slider" id="adminSlider">
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/1.svg"
+                  alt="Admin Screen 1"
+                  draggable="false"
+                />
+              </div>
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/2.svg"
+                  alt="Admin Screen 2"
+                  draggable="false"
+                />
+              </div>
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/3.svg"
+                  alt="Admin Screen 3"
+                  draggable="false"
+                />
+              </div>
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/4.svg"
+                  alt="Admin Screen 4"
+                  draggable="false"
+                />
+              </div>
+            </div>
+            <div class="slider-progress">
+              <div class="progress-bar" id="adminProgress"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loadman Flow -->
+        <div class="flow-section" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="flow-title">Loadman Flow</h3>
+          <div class="ui-slider-container">
+            <div class="ui-slider" id="loadmanSlider">
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/Loadman/1.svg"
+                  alt="Loadman Screen 1"
+                  draggable="false"
+                />
+              </div>
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/Loadman/2.svg"
+                  alt="Loadman Screen 2"
+                  draggable="false"
+                />
+              </div>
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/Loadman/3.svg"
+                  alt="Loadman Screen 3"
+                  draggable="false"
+                />
+              </div>
+              <div class="ui-screen">
+                <img
+                  src="../assets/ATM_App_Assets/Screens/Loadman/4.svg"
+                  alt="Loadman Screen 4"
+                  draggable="false"
+                />
+              </div>
+            </div>
+            <div class="slider-progress">
+              <div class="progress-bar" id="loadmanProgress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Results -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Impact & Results</h2>
+        <div class="content-text" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            The app was developed by a colleague and deployed internally at One
+            India ATM. The results exceeded expectations:
+          </p>
+        </div>
+
+        <div class="impact-list">
+          <div class="impact-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="impact-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div class="impact-content">
+              <h4>Instant Success</h4>
+              <p>
+                Immediate adoption by all loadmen and operators with zero
+                onboarding friction. Users found the interface intuitive enough
+                to use without training.
+              </p>
+            </div>
+          </div>
+
+          <div class="impact-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="impact-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="impact-content">
+              <h4>Zero Errors</h4>
+              <p>
+                No calculation errors or confusion reported post-launch. The
+                auto-calculation and validation system eliminated the human
+                error factor completely.
+              </p>
+            </div>
+          </div>
+
+          <div class="impact-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="impact-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg>
+            </div>
+            <div class="impact-content">
+              <h4>Operational Efficiency</h4>
+              <p>
+                Reduced money loading and verification time from 10+ minutes to
+                under 1 minute. Real-time tracking eliminated follow-up calls
+                and manual verification.
+              </p>
+            </div>
+          </div>
+
+          <div class="impact-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="impact-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </div>
+            <div class="impact-content">
+              <h4>Enhanced Transparency</h4>
+              <p>
+                Complete visibility into all ATM operations built trust between
+                operators and loadmen, reducing disputes and improving
+                accountability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="content-section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Key Takeaways</h2>
+
+        <div class="takeaway-list">
+          <div class="takeaway-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="takeaway-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div class="takeaway-content">
+              <h4>Simplicity Wins in Operational Tools</h4>
+              <p>
+                The app's success came from ruthlessly simplifying complex
+                operations. Every feature served a clear purpose—no bloat, no
+                unnecessary steps.
+              </p>
+            </div>
+          </div>
+
+          <div class="takeaway-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="takeaway-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="takeaway-content">
+              <h4>Error Prevention > Error Correction</h4>
+              <p>
+                Instead of adding error correction flows, I designed input
+                methods that made errors impossible. Constraints and
+                auto-calculation eliminated the need for validation.
+              </p>
+            </div>
+          </div>
+
+          <div class="takeaway-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="takeaway-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"
+                />
+              </svg>
+            </div>
+            <div class="takeaway-content">
+              <h4>Real-Time Feedback Builds Trust</h4>
+              <p>
+                Showing instant calculations and immediate confirmations made
+                users confident in the system. No waiting, no uncertainty—just
+                immediate feedback.
+              </p>
+            </div>
+          </div>
+
+          <div class="takeaway-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="takeaway-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="takeaway-content">
+              <h4>Speed Matters in Time-Critical Apps</h4>
+              <p>
+                Designing for speed (3-day delivery) meant making smart
+                trade-offs. I focused on core workflows that delivered maximum
+                value, not peripheral features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Navigation -->
+    <section class="case-nav-section">
+      <div class="container">
+        <div class="case-nav-grid">
+          <a href="#" class="case-nav-link prev-case" data-aos="fade-right">
+            <div class="nav-arrow">←</div>
+            <div class="nav-content">
+              <span class="nav-label">Previous Work</span>
+            </div>
+          </a>
+
+          <a href="#" class="case-nav-link next-case" data-aos="fade-left">
+            <div class="nav-content">
+              <span class="nav-label">Next Work</span>
+            </div>
+            <div class="nav-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="case-footer">
+      <div class="container">
+        <p>© 2025. Designed & Developed by Santhosh</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="case-study.js"></script>
+
+    <!-- UI Slider Interactive Script -->
+    <script>
+      // Mouse Interactive Slider
+      function initSlider(sliderId, progressId) {
+        const slider = document.getElementById(sliderId);
+        const progressBar = document.getElementById(progressId);
+
+        if (!slider || !progressBar) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Mouse down event
+        slider.addEventListener("mousedown", (e) => {
+          isDown = true;
+          slider.style.cursor = "grabbing";
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+
+        // Mouse leave event
+        slider.addEventListener("mouseleave", () => {
+          isDown = false;
+          slider.style.cursor = "grab";
+        });
+
+        // Mouse up event
+        slider.addEventListener("mouseup", () => {
+          isDown = false;
+          slider.style.cursor = "grab";
+        });
+
+        // Mouse move event
+        slider.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 2; // Scroll speed multiplier
+          slider.scrollLeft = scrollLeft - walk;
+          updateProgress();
+        });
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+
+        slider.addEventListener("touchstart", (e) => {
+          touchStartX = e.touches[0].pageX - slider.offsetLeft;
+          touchScrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener("touchmove", (e) => {
+          const x = e.touches[0].pageX - slider.offsetLeft;
+          const walk = (x - touchStartX) * 2;
+          slider.scrollLeft = touchScrollLeft - walk;
+          updateProgress();
+        });
+
+        // Update progress bar
+        function updateProgress() {
+          const maxScroll = slider.scrollWidth - slider.clientWidth;
+          const currentScroll = slider.scrollLeft;
+          const scrollPercentage = (currentScroll / maxScroll) * 100;
+          progressBar.style.width = scrollPercentage + "%";
+        }
+
+        // Initial progress
+        updateProgress();
+
+        // Update on window resize
+        window.addEventListener("resize", updateProgress);
+      }
+
+      // Initialize sliders when DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        initSlider("adminSlider", "adminProgress");
+        initSlider("loadmanSlider", "loadmanProgress");
+      });
+    </script>
+  </body>
+</html>
