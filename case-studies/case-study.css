@@ -1584,9 +1584,15 @@ footer {
 }
 
 .case-nav-link.inactive {
-  opacity: 0.3;
+  opacity: 0.3 !important;
   pointer-events: none;
   cursor: not-allowed;
+}
+
+.case-nav-link.inactive .nav-arrow,
+.case-nav-link.inactive .nav-content,
+.case-nav-link.inactive .nav-label {
+  opacity: 0.3 !important;
 }
 
 .case-nav-link.inactive:hover {
