@@ -1581,7 +1581,7 @@ function initDynamicDock() {
       lastScrollTime = now;
       requestAnimationFrame(() => {
         // Auto-hide dock behavior (like mentor.html)
-        const isAtIntro = scrollY < windowHeight * 0.8;
+        const isAtIntro = scrollY < windowHeight * 0.3;
         const isAtBottom = scrollY + windowHeight >= documentHeight - 200;
 
         const mainItems = dock.querySelectorAll('.dock-item:not([data-action="backtotop"])');
