@@ -351,48 +351,81 @@ function createCard(data, index) {
   return card;
 }
 
-function renderJourneyCards(category) {
-  const container = document.getElementById("cardsContainer");
-  const data = journeyData[category] || [];
-  currentCategory = category;
+function renderJourneyTimeline() {
+  const container = document.getElementById("journeyTimelineContainer");
+  if (!container) {
+    console.error('❌ Journey timeline container not found!');
+    return;
+  }
 
   container.innerHTML = '';
 
-  cardsArray = data.map((item, index) => {
-    const card = createCard(item, index);
-    container.appendChild(card);
-    return card;
-  });
+  // Render each category section
+  const categories = [
+    { key: 'experience', title: 'WORK EXPERIENCE' },
+    { key: 'education', title: 'EDUCATION' },
+    { key: 'mentorship', title: 'MENTORSHIP' },
+    { key: 'internship', title: 'INTERNSHIP' }
+  ];
 
-  currentIndex = 0;
+  categories.forEach(category => {
+    const data = journeyData[category.key];
+    if (!data || data.length === 0) return;
 
-  // Set initial hidden state
-  cardsArray.forEach(card => {
-    gsap.set(card, {
-      x: 0,
-      y: 0,
-      scale: 1,
-      opacity: 0,
-      rotateY: 0,
-      rotateZ: 0,
-      zIndex: 10
+    const section = document.createElement('div');
+    section.className = 'category-section';
+    section.innerHTML = `<h3 class="category-header">${category.title}</h3>`;
+
+    data.forEach(item => {
+      const entry = document.createElement('div');
+      entry.className = 'timeline-entry';
+
+      let institutesHTML = '';
+      if (item.timeline && item.timeline.length > 0) {
+        institutesHTML = `
+          <div class="timeline-institutes">
+            ${item.timeline.map(inst => `
+              <div class="institute-item">
+                ${inst.logo ? `<div class="institute-logo"><img src="${inst.logo}" alt="${inst.institute}"></div>` : ''}
+                <div class="institute-name">${inst.institute}</div>
+                <div class="institute-period">${inst.period}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      entry.innerHTML = `
+        <div class="entry-header">
+          <div class="entry-logo">
+            <img src="${item.logo}" alt="${item.company}" onerror="this.style.display='none'">
+          </div>
+          <div class="entry-info">
+            <div class="entry-year">${item.dateRange}</div>
+            <h4 class="entry-title">${item.company}</h4>
+            <div class="entry-role">${item.role}</div>
+            <div class="entry-location">
+              <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span>${item.location}</span>
+            </div>
+          </div>
+        </div>
+        <ul class="entry-responsibilities">
+          ${item.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+        </ul>
+        ${institutesHTML}
+      `;
+
+      section.appendChild(entry);
     });
+
+    container.appendChild(section);
   });
 
-  setTimeout(() => {
-    // Use stacked layout for internship, normal for others
-    if (category === 'internship') {
-      updateStackedCarouselPositions();
-      // Force GSAP to apply stacked positions immediately
-      animateStackedCardsToPosition();
-    } else {
-      updateCarouselPositions();
-    }
-  }, 50);
-
-  createNavigationArrows();
-  updateArrowsVisibility();
-  setupCardClicks();
+  console.log('✅ Journey timeline rendered!');
 }
 
 function updateCarouselPositions() {
@@ -1001,47 +1034,70 @@ function createRecommendationCard(data, index) {
   return card;
 }
 
-function renderRecommendationsCarousel() {
-  const section = document.querySelector('.recommendations-section');
-  if (!section) {
-    console.error('❌ Recommendations section not found!');
+function renderRecommendationsGrid() {
+  const container = document.getElementById('recommendationsGrid');
+  if (!container) {
+    console.error('❌ Recommendations grid container not found!');
     return;
   }
 
-  const oldContainer = section.querySelector('.recommendations-container');
-  if (oldContainer) oldContainer.remove();
+  container.innerHTML = '';
 
-  const container = document.createElement('div');
-  container.className = 'recommendations-container';
-  container.id = 'recCardsContainer';
+  // Best phrases extracted for each recommendation
+  const bestPhrases = [
+    "His work always balanced good design with practical implementation",
+    "Bridges the gap between design and development effortlessly",
+    "His impact on our revenue growth has been profound",
+    "Not just a mentor but a visionary leader"
+  ];
 
-  recCardsArray = recommendationsData.map((rec, index) => {
-    const card = createRecommendationCard(rec, index);
-    container.appendChild(card);
-    return card;
-  });
+  recommendationsData.forEach((rec, index) => {
+    const card = document.createElement('div');
+    card.className = 'review-card';
 
-  section.appendChild(container);
+    const starIcons = `
+      <svg class="star-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    `.repeat(5);
 
-  currentRecIndex = 0;
-  recCardsArray.forEach(card => {
-    gsap.set(card, {
-      x: 0,
-      y: 0,
-      scale: 1,
-      opacity: 0,
-      rotateY: 0,
-      zIndex: 10
+    card.innerHTML = `
+      <div class="review-header">
+        <img src="${rec.image}" alt="${rec.name}" class="review-avatar" onerror="this.src='/assets/default-profile.jpg'">
+        <div class="review-info">
+          <div class="review-info-top">
+            <h4 class="review-name">${rec.name}</h4>
+            <div class="review-stars">${starIcons}</div>
+          </div>
+          <p class="review-role">${rec.role}</p>
+        </div>
+      </div>
+      <div class="review-content">
+        <h5 class="review-title">"${bestPhrases[index]}"</h5>
+        <p class="review-text">${rec.quote}</p>
+        <button class="review-read-more">
+          Read more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    `;
+
+    // Add click handler for "Read more"
+    const readMoreBtn = card.querySelector('.review-read-more');
+    readMoreBtn.addEventListener('click', () => {
+      card.classList.toggle('expanded');
+      readMoreBtn.textContent = card.classList.contains('expanded') ? 'Show less' : 'Read more';
+      readMoreBtn.innerHTML = card.classList.contains('expanded')
+        ? 'Show less <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>'
+        : 'Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>';
     });
+
+    container.appendChild(card);
   });
 
-  setTimeout(() => {
-    updateRecCardPositions();
-  }, 50);
-
-  setupRecCardClicks();
-  
-  console.log('✅ Recommendations carousel rendered!');
+  console.log('✅ Recommendations grid rendered!');
 }
 
 function updateRecCardPositions() {
@@ -1643,6 +1699,7 @@ function setupDockBlur() {
 function revealElementsOnScroll() {
   const windowHeight = window.innerHeight;
 
+  // Reveal skill categories
   const skillCategories = document.querySelectorAll('.skill-category');
   skillCategories.forEach((category) => {
     const rect = category.getBoundingClientRect();
@@ -1653,6 +1710,27 @@ function revealElementsOnScroll() {
     }
   });
 
+  // Reveal journey category sections
+  const categorySections = document.querySelectorAll('.category-section');
+  categorySections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < windowHeight * 0.8) {
+      section.classList.add('revealed');
+    }
+  });
+
+  // Reveal review cards
+  const reviewCards = document.querySelectorAll('.review-card');
+  reviewCards.forEach((card, index) => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < windowHeight * 0.8) {
+      setTimeout(() => {
+        card.classList.add('revealed');
+      }, index * 150); // Stagger the reveal
+    }
+  });
+
+  // Reveal main sections
   const sections = document.querySelectorAll('.journey-section, .skills-section, .recommendations-section');
   sections.forEach(section => {
     const rect = section.getBoundingClientRect();
@@ -1665,75 +1743,8 @@ function revealElementsOnScroll() {
 }
 
 function setupScrollTriggers() {
-  // Journey Section ScrollTrigger (you already have this)
-  ScrollTrigger.create({
-      trigger: '.journey-section',
-      start: 'top 70%',
-      end: 'bottom 30%',
-      onEnter: () => {
-          if (!journeyAnimated) {
-              console.log('🎬 Journey entered - animating!');
-              if (currentCategory === 'internship') {
-                  animateStackedCardsSlideIn();
-              } else {
-                  animateCardsSlideIn();
-              }
-          }
-      },
-      onLeave: () => {
-          if (journeyAnimated) {
-              console.log('👋 Journey left - sliding out!');
-              animateCardsSlideOut();
-          }
-      },
-      onEnterBack: () => {
-          if (!journeyAnimated) {
-              console.log('🔙 Journey re-entered - animating!');
-              if (currentCategory === 'internship') {
-                  animateStackedCardsSlideIn();
-              } else {
-                  animateCardsSlideIn();
-              }
-          }
-      },
-      onLeaveBack: () => {
-          if (journeyAnimated) {
-              console.log('⬆️ Journey left upward - sliding out!');
-              animateCardsSlideOut();
-          }
-      }
-  });
-
-  // ADD THIS: Recommendations Section ScrollTrigger
-  ScrollTrigger.create({
-      trigger: '.recommendations-section',
-      start: 'top 70%',
-      end: 'bottom 30%',
-      onEnter: () => {
-          if (!recommendationsAnimated) {
-              console.log('🎬 Recommendations entered - animating!');
-              animateRecCardsSlideIn();
-          }
-      },
-      onLeave: () => {
-          if (recommendationsAnimated) {
-              console.log('👋 Recommendations left - sliding out!');
-              animateRecCardsSlideOut();
-          }
-      },
-      onEnterBack: () => {
-          if (!recommendationsAnimated) {
-              console.log('🔙 Recommendations re-entered - animating!');
-              animateRecCardsSlideIn();
-          }
-      },
-      onLeaveBack: () => {
-          if (recommendationsAnimated) {
-              console.log('⬆️ Recommendations left upward - sliding out!');
-              animateRecCardsSlideOut();
-          }
-      }
-  });
+  // Simplified scroll triggers - no complex carousel animations needed
+  console.log('✅ Scroll triggers initialized');
 }
 
 
@@ -1875,10 +1886,9 @@ window.addEventListener("load", () => {
 
         // Render all sections
         console.log("🔄 Rendering sections...");
-        renderJourneyCards('experience');
+        renderJourneyTimeline();
         renderSkillsWithMarquee();
-        renderRecommendationsCarousel();
-        setupRecArrowButtons();
+        renderRecommendationsGrid();
 
         // Setup ScrollTriggers for animations
         setupScrollTriggers();
