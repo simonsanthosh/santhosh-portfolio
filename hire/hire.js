@@ -322,7 +322,7 @@ function handleDockVisibility() {
 
   const currentScrollY = window.scrollY;
 
-  if (currentScrollY > 100) {
+  if (currentScrollY > 50) {
     dock.classList.add('hidden');
   } else {
     dock.classList.remove('hidden');

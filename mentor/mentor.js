@@ -1874,7 +1874,7 @@ function setupDynamicDock() {
     const documentHeight = document.documentElement.scrollHeight;
 
     // Check if at intro section (top ~100vh)
-    const isAtIntro = scrollY < windowHeight * 0.8;
+    const isAtIntro = scrollY < windowHeight * 0.3;
 
     // Check if at bottom (within last 200px of page)
     const isAtBottom = scrollY + windowHeight >= documentHeight - 200;
