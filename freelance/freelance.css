@@ -690,7 +690,7 @@ a:focus-visible {
 .client-label {
   font-size: 0.9rem;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 1px;
 }

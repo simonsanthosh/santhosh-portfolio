@@ -357,11 +357,16 @@ body {
   right: 20px;
   font-size: 0.85rem;
   color: var(--primary-dark);
-  background: var(--bg-overlay);
+  background: rgba(255, 255, 255, 0.033);
   padding: 0.55rem 1rem;
   border-radius: 8px;
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border-color);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.067);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   z-index: 1000;
   opacity: 0;
   transform: translateX(30px);
@@ -398,11 +403,16 @@ body {
   right: 211px;
   font-size: 0.85rem;
   color: var(--primary-dark);
-  background: var(--bg-overlay);
+  background: rgba(255, 255, 255, 0.033);
   padding: 0.3rem 1rem;
   border-radius: 8px;
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border-color);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.067);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   z-index: 1000;
   opacity: 0;
   transform: translateX(30px);
@@ -419,11 +429,16 @@ body {
 }
 
 .theme-selector:hover {
-  background: var(--bg-overlay);
+  background: rgba(255, 255, 255, 0.046);
   border-color: var(--primary-color);
   transform: translateY(-5px) scale(1.08);
-  box-shadow: 0 15px 35px var(--glow-color),
-    0 0 20px var(--glow-color);
+  box-shadow:
+    0 15px 40px var(--glow-color),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
 }
 
 .theme-color-indicator {
@@ -533,11 +548,16 @@ body {
   right: 310px;
   font-size: 0.85rem;
   color: var(--primary-dark);
-  background: var(--bg-overlay);
+  background: rgba(255, 255, 255, 0.033);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border-color);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.067);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: none; /* COMPLETELY HIDDEN - no rendering at all */
   align-items: center;
@@ -588,9 +608,15 @@ body {
 
 /* Hover state */
 .ai-chat-toggle-wrapper:hover {
+  background: rgba(255, 255, 255, 0.046);
   border-color: var(--primary-color);
-  box-shadow: 0 15px 35px var(--glow-color),
-    0 0 20px var(--glow-color);
+  box-shadow:
+    0 15px 40px var(--glow-color),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
 }
 
 .ai-chat-toggle-wrapper:hover .toggle-label {
@@ -719,9 +745,14 @@ body.theme-mono .ai-chat-toggle-wrapper {
   min-width: 160px;
   padding: 1rem 1.2rem;
   border-radius: 12px;
-  background: var(--bg-overlay);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.033);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.067);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   color: var(--primary-dark);
   font-size: 0.85rem;
   font-weight: 500;
@@ -742,11 +773,16 @@ body.theme-mono .ai-chat-toggle-wrapper {
 
 /* Smooth hover effect without affecting layout */
 .glass-card:hover {
-  background: var(--bg-overlay);
+  background: rgba(255, 255, 255, 0.046);
   border-color: var(--primary-color);
   transform: translateY(-5px) scale(1.08);
-  box-shadow: 0 15px 35px var(--glow-color),
-    0 0 20px var(--glow-color);
+  box-shadow:
+    0 15px 40px var(--glow-color),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
 }
 
 .glass-card:active {
@@ -777,9 +813,14 @@ body.theme-mono .ai-chat-toggle-wrapper {
 }
 
 .preview-card {
-  background: var(--bg-overlay);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.033);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.067);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 1.5rem;
   width: 650px;
