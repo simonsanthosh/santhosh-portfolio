@@ -1564,25 +1564,45 @@ const dockConfig = {
 };
 
 function initDynamicDock() {
+  const dock = document.getElementById('dockMenu');
+
+  // Initial render
   updateDockForSection('intro');
 
   let lastScrollTime = 0;
 
   window.addEventListener('scroll', () => {
     const now = Date.now();
-    const dock = document.getElementById('dockMenu');
-
-    dock.classList.add('scrolling');
-
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => {
-      dock.classList.remove('scrolling');
-    }, 150);
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
     if (now - lastScrollTime > 16) {
       lastScrollTime = now;
       requestAnimationFrame(() => {
-        updateDockBasedOnScroll();
+        // Auto-hide dock behavior (like mentor.html)
+        const isAtIntro = scrollY < windowHeight * 0.8;
+        const isAtBottom = scrollY + windowHeight >= documentHeight - 200;
+
+        const mainItems = dock.querySelectorAll('.dock-item:not([data-action="backtotop"])');
+        const bottomItem = dock.querySelector('.dock-item[data-action="backtotop"]');
+
+        if (isAtIntro) {
+          // Show dock with main items only at top
+          dock.classList.remove('hidden');
+          mainItems.forEach(item => item.classList.remove('hide-item'));
+          if (bottomItem) bottomItem.classList.add('hide-item');
+        } else if (isAtBottom) {
+          // Show dock with back to top only at bottom
+          dock.classList.remove('hidden');
+          mainItems.forEach(item => item.classList.add('hide-item'));
+          if (bottomItem) bottomItem.classList.remove('hide-item');
+        } else {
+          // Hide dock completely in middle sections
+          dock.classList.add('hidden');
+        }
+
+        // Continue with other scroll handlers
         handleHeaderVisibility();
         handleScrollIndicatorVisibility();
         revealElementsOnScroll();
@@ -1591,73 +1611,23 @@ function initDynamicDock() {
   }, { passive: true });
 }
 
-function updateDockBasedOnScroll() {
-  const sections = document.querySelectorAll('[data-section]');
-  const windowHeight = window.innerHeight;
-
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    const sectionMiddle = rect.top + (rect.height / 2);
-    const viewportMiddle = windowHeight / 2;
-
-    if (Math.abs(sectionMiddle - viewportMiddle) < windowHeight * 0.3) {
-      const sectionName = section.dataset.section;
-
-      if (sectionName !== currentDockSection) {
-        updateDockForSection(sectionName);
-        currentDockSection = sectionName;
-      }
-    }
-  });
-}
-
 function updateDockForSection(sectionName) {
   const dock = document.getElementById('dockMenu');
 
-  // Hide dock for journey section
-  if (sectionName === 'journey') {
-    gsap.to(dock, {
-      opacity: 0,
-      y: 10,
-      duration: 0.3,
-      ease: 'power2.inOut',
-      onComplete: () => {
-        dock.style.display = 'none';
-      }
-    });
-    return;
-  }
+  // Render all dock items (intro items + back to top)
+  const allItems = [...dockConfig.intro, ...dockConfig.recommendations];
 
-  // Show dock for other sections
-  dock.style.display = 'flex';
-  const config = dockConfig[sectionName] || dockConfig.intro;
+  dock.innerHTML = allItems.map(item => `
+    <button class="dock-item ${item.action === 'backtotop' ? 'hide-item' : ''}"
+      data-action="${item.action}"
+      ${item.category ? `data-category="${item.category}"` : ''}
+      title="${item.label}">
+      ${item.icon}
+      <span class="dock-item-label">${item.label}</span>
+    </button>
+  `).join('');
 
-  gsap.to(dock, {
-    opacity: 0,
-    y: 10,
-    duration: 0.3,
-    ease: 'power2.inOut',
-    onComplete: () => {
-      dock.innerHTML = config.map(item => `
-        <button class="dock-item"
-          data-action="${item.action}"
-          ${item.category ? `data-category="${item.category}"` : ''}
-          title="${item.label}">
-          ${item.icon}
-          <span class="dock-item-label">${item.label}</span>
-        </button>
-      `).join('');
-
-      attachDockListeners(sectionName);
-
-      gsap.to(dock, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        ease: 'power2.out'
-      });
-    }
-  });
+  attachDockListeners();
 }
 
 function attachDockListeners(sectionName) {
