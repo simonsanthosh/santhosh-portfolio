@@ -80,14 +80,19 @@ const journeyData = {
       projects: [], // Empty - we'll use timeline instead
       timeline: [ // NEW - Timeline data
         {
+          institute: "FITA Academy",
+          period: "2021 - 2022",
+          logo: "/assets/fita.jpeg"
+        },
+        {
           institute: "SpaceZee",
           period: "2022 - 2023",
-          logo: "/assets/spacezee.jpeg" // Add logo if available
+          logo: "/assets/spacezee.jpeg"
         },
         {
           institute: "Guvi",
           period: "2023 - 2024",
-          logo: "/assets/guvi.png" // Add logo if available
+          logo: "/assets/guvi.png"
         }
       ],
       clients: [],
@@ -395,29 +400,69 @@ function renderJourneyTimeline() {
         `;
       }
 
-      entry.innerHTML = `
-        <div class="entry-header">
-          <div class="entry-logo">
-            <img src="${item.logo}" alt="${item.company}" onerror="this.style.display='none'">
-          </div>
-          <div class="entry-info">
-            <div class="entry-year">${item.dateRange}</div>
-            <h4 class="entry-title">${item.company}</h4>
-            <div class="entry-role">${item.role}</div>
-            <div class="entry-location">
-              <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-              <span>${item.location}</span>
+      // Build clients section HTML
+      let clientsHTML = '';
+      if (item.clients && item.clients.length > 0) {
+        clientsHTML = `
+          <div class="entry-divider"></div>
+          <div class="entry-clients">
+            <div class="entry-section-title">CLIENTS</div>
+            <div class="clients-grid">
+              ${item.clients.map(client => `
+                <div class="client-logo">
+                  <img src="${client}" alt="Client" onerror="this.style.display='none'">
+                </div>
+              `).join('')}
             </div>
           </div>
+        `;
+      }
+
+      // Build projects section HTML
+      let projectsHTML = '';
+      if (item.projects && item.projects.length > 0) {
+        projectsHTML = `
+          <div class="entry-projects">
+            <div class="entry-section-title">KEY PROJECTS</div>
+            <div class="projects-list">
+              ${item.projects.map(project => `
+                <span class="project-badge">${project}</span>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      entry.innerHTML = `
+        <div class="entry-header">
+          <div class="entry-left">
+            <div class="entry-logo">
+              <img src="${item.logo}" alt="${item.company}" onerror="this.style.display='none'">
+            </div>
+            <div class="entry-info">
+              <h4 class="entry-title">${item.company}</h4>
+              <div class="entry-role">${item.role}</div>
+              <div class="entry-location">
+                <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span>${item.location}</span>
+              </div>
+            </div>
+          </div>
+          <div class="entry-year">${item.dateRange}</div>
         </div>
         <ul class="entry-responsibilities">
           ${item.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
         </ul>
+        ${projectsHTML}
+        ${clientsHTML}
         ${institutesHTML}
       `;
+
+      // Add data-reveal attribute for scroll animation
+      entry.setAttribute('data-reveal', '');
 
       section.appendChild(entry);
     });
@@ -1568,6 +1613,23 @@ function updateDockBasedOnScroll() {
 
 function updateDockForSection(sectionName) {
   const dock = document.getElementById('dockMenu');
+
+  // Hide dock for journey section
+  if (sectionName === 'journey') {
+    gsap.to(dock, {
+      opacity: 0,
+      y: 10,
+      duration: 0.3,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        dock.style.display = 'none';
+      }
+    });
+    return;
+  }
+
+  // Show dock for other sections
+  dock.style.display = 'flex';
   const config = dockConfig[sectionName] || dockConfig.intro;
 
   gsap.to(dock, {
@@ -1747,6 +1809,28 @@ function setupScrollTriggers() {
   console.log('✅ Scroll triggers initialized');
 }
 
+/* ========================================
+   SCROLL REVEAL ANIMATION (ATM App Style)
+======================================== */
+function initScrollReveal() {
+  const reveals = document.querySelectorAll('[data-reveal]');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  reveals.forEach(reveal => revealObserver.observe(reveal));
+  console.log('✅ Scroll reveal initialized with', reveals.length, 'elements');
+}
+
 
 /* ========================================
    RESUME MODAL FUNCTIONS
@@ -1892,6 +1976,9 @@ window.addEventListener("load", () => {
 
         // Setup ScrollTriggers for animations
         setupScrollTriggers();
+
+        // Initialize scroll reveal animations
+        initScrollReveal();
 
         // Initialize dock
         initDynamicDock();
